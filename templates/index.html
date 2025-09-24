@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Topics</h1>
+<ul>
+    {% for topic in topics %}
+        <li>
+            <a href="{{ url_for('topic', topic_id=topic.id) }}">{{ topic.title }}</a> by User {{ topic.user_id }}
+        </li>
+    {% else %}
+        <li>No topics yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
